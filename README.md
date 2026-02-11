@@ -1,15 +1,20 @@
-# react-native-android-ci-demo
+# RNAndroidDemo
 
-React Native Android CI demo for building and testing RN apps on Android
+A React Native Android demo app with CI/CD via GitHub Actions.
 
-## Overview
+## Build
 
-This repository is a demo project for [AutoDevice](https://autodevice.dev) CI integration.
+```bash
+npm install
+cd android && ./gradlew assembleDebug
+```
 
-## Getting Started
+The debug APK will be at `android/app/build/outputs/apk/debug/app-debug.apk`.
 
-Coming soon.
+## CI/CD
 
-## License
+The GitHub Actions workflow builds the debug APK and uploads it to AutoDevice on every push to `main`.
 
-MIT
+### Required Secrets
+
+- `AUTODEVICE_API_KEY` — API key for AutoDevice
